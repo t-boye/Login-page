@@ -1,169 +1,170 @@
-.header {
-    text-align: center;
-    margin: 0 auto;
-    width: 100%;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 47px;
-    font-weight: bold;
-    color: white;
-}
-
-label {
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-    color: white;
-}
-
-small {
-    color: white;
-}
-
-input[type="email"],
-input[type="password"] {
-    padding: 0.5rem;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 100%;
-}
-
-.form-check-label {
-    font-weight: normal;
-}
-
-.btn-primary {
-    background-color: #007bff;
-    color: #fff;
-    padding: 0.75rem 1.5rem;
-    border-radius: 5px;
-    font-size: 1rem;
-    border: none;
-    cursor: pointer;
+html {
+    height: 100%;
 }
 
 body {
-    background-image: url(pexels-yulia-pribytkova-15125544.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    opacity: 0.9;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: linear-gradient(#fa709a, #fee140);
 }
 
-form {
-    width: 500px;
-    margin: 0 auto;
-    padding: 2rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    text-align: center;
-    margin-top: 70px;
+.login-border-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, .5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    border-radius: 10px;
 }
 
-.form-group {
-    padding: 1rem;
-    margin-bottom: 1rem;
-}
-
-label {
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-}
-
-input[type="email"],
-input[type="password"] {
-    padding: 0.5rem;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 100%;
-}
-
-.form-check-label {
-    font-weight: normal;
-}
-
-.btn-primary {
-    background-color: #007bff;
+.login-border-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
     color: #fff;
-    padding: 0.75rem 1.5rem;
-    border-radius: 5px;
-    font-size: 1rem;
-    border: none;
-    cursor: pointer;
+    text-align: center;
 }
 
-button.btn {
-    padding: 10px 20px;
-    border-radius: 40px;
+.login-border-box .user-box {
+    position: relative;
+}
+
+.login-border-box .user-box input {
+    width: 100%;
+    padding: 10px 0;
     font-size: 16px;
     color: #fff;
-    background-color: #007bff;
-    border-color: #007bff;
-    transition: all 0.2s ease-in-out;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
 }
 
-button.btn:hover {
-    background-color: #0069d9;
-    border-color: #0062cc;
-    cursor: pointer;
-}
-
-.footer {
-    background-color: #212529;
+.login-border-box .user-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
     color: #fff;
-    padding: 1.5rem;
-    text-align: center;
+    pointer-events: none;
+    transition: .5s;
 }
 
-.footer p {
-    margin-bottom: 0.5rem;
+.login-border-box .user-box input:focus~label,
+.login-border-box .user-box input:valid~label {
+    top: -20px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 12px;
 }
 
-.footer a {
+.login-border-box form a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #03e9f4;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px
+}
+
+.login-box a:hover {
+    background: #03e9f4;
     color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 100px #03e9f4;
 }
 
-.footer a:hover {
-    text-decoration: underline;
+.login-box a span {
+    position: absolute;
+    display: block;
 }
 
+.login-border-box a span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: btn-anim1 1s linear infinite;
+}
 
-/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
-
-
-/*@media only screen and (max-width: 768px) {
-    /* For mobile phones: 
-    [class*="col-"] {
-        width: 100%;
+@keyframes btn-anim1 {
+    0% {
+        left: -100%;
+    }
+    50%,
+    100% {
+        left: 100%;
     }
 }
 
-@media only screen and (max-width: 600px) {
-    form {
-        display: flex;
-        flex-direction: column;
-    }
-}*/
+.login-border-box a span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: .25s
+}
 
-@media only screen and (max-width: 576px) {
-    form {
-        width: 90%;
-        padding: 1rem;
+@keyframes btn-anim2 {
+    0% {
+        top: -100%;
     }
-    .header {
-        font-size: 30px;
+    50%,
+    100% {
+        top: 100%;
     }
-    label,
-    small {
-        font-size: 0.9rem;
+}
+
+.login-border-box a span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #03e9f4);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s
+}
+
+@keyframes btn-anim3 {
+    0% {
+        right: -100%;
     }
-    input[type="email"],
-    input[type="password"] {
-        font-size: 0.8rem;
+    50%,
+    100% {
+        right: 100%;
     }
-    .btn-primary {
-        font-size: 0.8rem;
-        padding: 0.5rem 1rem;
+}
+
+.login-border-box a span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #03e9f4);
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: .75s
+}
+
+@keyframes btn-anim4 {
+    0% {
+        bottom: -100%;
+    }
+    50%,
+    100% {
+        bottom: 100%;
     }
 }
